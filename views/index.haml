@@ -1,0 +1,72 @@
+:css
+  path {
+    stroke: #fff;
+    fill-rule: evenodd;
+  }
+
+  text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  pre {
+    white-space: pre-wrap;
+  }
+
+
+	
+  .node {cursor: pointer;
+  }
+
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+
+  .node text {
+    font: 12px sans-serif;
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+
+
+
+%html{'ng-app'=>"myApp"} 
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+  %script{:src => "assets/underscore.js"}
+  %script{:src => "assets/d3.min.js"}
+  %script{:src => "assets/tree.js"}
+  %script{ src: javascript_path('application') }
+  %link{:href => "https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css", :rel => "stylesheet prefetch"}/
+  %body
+    .container-fluid
+      .row
+        .col-md-2
+          &nbsp;
+        .col-md-8{style: "padding: 20px;"}
+          .col-md-12{style: "background-color:rgba(86,61,124,.15);padding-bottom: 10px;padding-top: 10px;border-radius: 10px;font-size:16px"}
+            %p
+              This is a d3 refocusable tree built off the
+              %a{href: 'http://bl.ocks.org/mbostock/4339083'}> &nbsp;Collapsible Tree
+              \.
+              Click a node to make it the new focus. Click the background to return to previous state.
+              
+            %p 
+        .col-md-2
+          &nbsp;
+      .row          
+        .col-mid-12
+          #list{'ng-controller'=> 'listCtrl'}
+            .row
+              .col-md-2
+
+              .col-md-8
+                .row
+                  .col-md-8
+                    #focus{:style => "color:white;height:1000px;"}
+                      #vis
