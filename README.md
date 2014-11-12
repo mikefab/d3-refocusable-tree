@@ -1,6 +1,8 @@
 This is a d3 refocusable tree built off the Collapsible Tree. Click a node to make it the new focus. Click the background to return to previous state.
 
-# Haml Coffee Sinatra
+Live demo at http://codepen.io/mikefab/pen/IDdts
+
+Server:
 
 This is an example [Sinatra](https://github.com/sinatra/sinatra) application based on the
 [Sinatra Asset Pipeline](https://github.com/petebrowne/sinatra-asset-pipeline) example application  to show the
